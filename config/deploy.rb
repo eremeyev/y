@@ -1,9 +1,11 @@
 default_run_options[:pty] = true  # Must be set for the password prompt from git to work
+ssh_options[:forward_agent] = true
 set :application, "yoga23"
-set :repository, "git://github.com@azazelo:y.git"
+set :deploy_to, "/home/admin/data/#{application}"
+set :repository, "git@github.com:azazelo/y.git"
 set :scm, "git"
 set :user, "root"  # The server's user for deploys
-set :scm_passphrase, "11031973" # venividivici"  # The deploy user's password
+set :scm_passphrase,  "venividivici"  # The deploy user's password
 set :branch, "master"
 
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
