@@ -1,13 +1,17 @@
-set :application, "yoga23.co.uk"
-set :repository,  "git://github.com@azazelo:yoga23.git"
+default_run_options[:pty] = true  # Must be set for the password prompt from git to work
+set :application, "yoga23"
+set :repository, "git://github.com@azazelo:y.git"
+set :scm, "git"
+set :user, "root"  # The server's user for deploys
+set :scm_passphrase, "11031973" # venividivici"  # The deploy user's password
+set :branch, "master"
 
-set :scm, :subversion
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+role :web, "78.24.222.238" #"your web-server here"                          # Your HTTP server, Apache/etc
+role :app, "78.24.222.238" #"your app-server here"                          # This may be the same as your `Web` server
+role :db,  "78.24.222.238" #"your primary db-server here", :primary => true # This is where Rails migrations will run
+#role :db,  "your slave db-server here"
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
