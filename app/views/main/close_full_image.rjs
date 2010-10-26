@@ -1,0 +1,2 @@
+page[:mask].hide
+page[:popup].hide

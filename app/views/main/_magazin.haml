@@ -1,0 +1,18 @@
+.list_item
+  .list_id
+    .num
+      = id = magazin.num
+    .season
+      = t(magazin.season)
+    .year
+      = magazin.year
+  .img 
+    = link_to (image_tag("#{id}/cover_tile.jpg")), {:action => :show_full_image, :id => id}, {:remote => true}
+  .inside
+    = render :partial => "contents_#{id}", :local => {:id => id}
+  .comments
+    %strong 25 
+    comments
+    %br
+    = link_to "Add Yours"
+  

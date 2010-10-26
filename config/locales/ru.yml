@@ -1,0 +1,22 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ru:
+  title: "YOGA23"
+  hello: "Привет!"
+  magazine: "Журнал"
+  disk: "Диск"
+  nav:
+    magazins: "журналы"
+    disks: "диски"
+    home: "главная"
+    blog: "блог"
+    contacts: "контакты"
+  spring: "Весна"
+  summer: "Лето"
+  autumn: "Осень"
+  winter: "Зима"
+  inside:
+    section: "Рубрика"
+    writer: "Автор"
+    title: "Статья"

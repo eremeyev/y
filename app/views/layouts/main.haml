@@ -1,0 +1,29 @@
+!!! Transitional
+%html
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => "text/html; charset=iso-8859-1"}
+    %title= I18n.t 'title'
+    = javascript_include_tag :defaults
+    = stylesheet_link_tag "base"
+  %body
+    #mask{:style => 'display:none'}
+      #popup{:style => 'display:none'}
+        #popup_content
+    #all
+      #head
+        #logo
+          = link_to (image_tag('logo.png')), {:action => 'index', :locale => I18n.locale}
+        #lang
+          = link_to_unless (I18n.locale == :ru), 'на Русском', {:locale => :ru, :action => params[:action]}
+          = " | "
+          = link_to_unless (I18n.locale == :en), 'in English', {:locale => :en, :action => params[:action]}
+      #nav
+        %ul
+          %li= link_to_unless_current (I18n.t 'nav.home'), {:action => 'index', :locale => I18n.locale} 
+          %li= link_to_unless_current (I18n.t 'nav.magazins'), {:action => 'magazins', :locale => I18n.locale}
+          %li= link_to_unless_current (I18n.t 'nav.disks'), {:action => 'disks', :locale => I18n.locale}
+          %li= link_to_unless_current (I18n.t 'nav.blog'), {:action => 'blog', :locale => I18n.locale}
+          %li= link_to_unless_current (I18n.t 'nav.contacts'), {:action => 'contacts', :locale => I18n.locale}
+      #body
+        = yield 
+

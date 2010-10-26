@@ -1,0 +1,5 @@
+#page[:mask].show 
+page.replace_html 'popup_content', :partial => 'img'
+page[:mask].show #visual_effect :appear, :duration => 0.1
+page[:popup].show #visual_effect :appear, :duration => 0.3 #show
+
