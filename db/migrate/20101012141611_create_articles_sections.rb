@@ -1,6 +1,6 @@
 class CreateArticlesSections < ActiveRecord::Migration
   def self.up
-    create_table :articles_sections do |t|
+    create_table :articles_sections, :id => false do |t|
       t.integer :article_id
       t.integer :section_id
 

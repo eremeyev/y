@@ -1,6 +1,6 @@
 class CreateArticlesMagazins < ActiveRecord::Migration
   def self.up
-    create_table :articles_magazins do |t|
+    create_table :articles_magazins, :id => false do |t|
       t.integer :article_id
       t.integer :magazin_id
 
